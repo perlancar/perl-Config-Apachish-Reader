@@ -145,4 +145,8 @@ documents
 
 L<Apachish::Examples> - sample documents
 
+Prior arts: L<Config::ApacheFormat>, L<Apache::ConfigFile>, L<Config::General>,
+L<Config::ApacheExtended>. A more in-depth comparison between these modules and
+Apachish will be made in the future.
+
 =cut
