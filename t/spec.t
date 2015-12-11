@@ -6,6 +6,7 @@ use warnings;
 
 use Config::Apachish::Reader;
 use File::ShareDir::Tarball qw(dist_dir);
+use JSON;
 use Test::Exception;
 use Test::More 0.98;
 
@@ -13,6 +14,8 @@ my $dir = dist_dir('Apachish-Examples');
 diag ".conf files are at $dir";
 
 my $reader = Config::Apachish::Reader->new;
+
+my $json = JSON->new;
 
 my @files = glob "$dir/examples/*.conf";
 diag explain \@files;
@@ -25,11 +28,11 @@ for my $file (@files) {
             dies_ok { $reader->read_file($file) } "dies";
         } else {
             my $res = $reader->read_file($file);
-            my $expected = $reader->_decode_json(
+            my $expected = $json->decode(
                 $reader->_read_file("$file.json")
-              );
-            is_deeply($res, $expected->[2])
-                or diag explain $res, $expected->[2];
+            );
+            is_deeply($res, $expected)
+                or diag explain $res, $expected;
         };
     }
 }
