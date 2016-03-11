@@ -6,7 +6,7 @@ use warnings;
 
 use Config::Apachish::Reader;
 use File::ShareDir::Tarball qw(dist_dir);
-use JSON;
+use JSON::MaybeXS;
 use Test::Exception;
 use Test::More 0.98;
 
@@ -15,7 +15,7 @@ diag ".conf files are at $dir";
 
 my $reader = Config::Apachish::Reader->new;
 
-my $json = JSON->new;
+my $json = JSON::MaybeXS->new;
 
 my @files = glob "$dir/examples/*.conf";
 diag explain \@files;
