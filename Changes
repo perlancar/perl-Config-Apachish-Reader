@@ -1,15 +1,15 @@
-0.03    2016-03-11 (PERLANCAR)
+0.03    2016-03-11  Released-By: PERLANCAR
 
 	- Replace JSON with JSON::MaybeXS.
 
 
-0.02    2015-12-11 (PERLANCAR)
+0.02    2015-12-11  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- [doc] Mention prior arts in See Also.
 
 
-0.01     2015-12-11 (PERLANCAR)
+0.01     2015-12-11  Released-By: PERLANCAR
 
          - First release.
